@@ -9,6 +9,10 @@ const token = process.env.GITHUB_PAT ?? "";
 
 const main = async () => {
 	const repos = await fetchRepoList(token);
+	console.log(
+		`Found ${repos.length} repos`,
+		repos.map((repo) => repo.full_name)
+	);
 
 	repos.forEach((repo) => {
 		sync({
