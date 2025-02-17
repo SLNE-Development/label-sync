@@ -124,41 +124,6 @@ const rawLabels: Label[] = [
 		color: "FEF2C0",
 		description: "Issue is unlikely to be resolved.",
 	},
-	{
-		name: "type: bug",
-		color: "B60205",
-		description: "Something doesn't work as it was intended to.",
-	},
-	{
-		name: "type: documentation",
-		color: "BFD4F2",
-		description: "Documentation stuff",
-	},
-	{
-		name: "type: question",
-		color: "BFD4F2",
-		description: "Issue represents a question and not a problem/request.",
-	},
-	{
-		name: "type: security",
-		color: "BFD4F2",
-		description: "Issue relates to the security of the server.",
-	},
-	{
-		name: "type: enhancement",
-		color: "BFD4F2",
-		description: "Issue represents an enhancement.",
-	},
-	{
-		name: "type: feature",
-		color: "BFD4F2",
-		description: "Issue represents a feature request.",
-	},
-	{
-		name: "type: task",
-		color: "BFD4F2",
-		description: "Issue represents a task that needs to be done.",
-	},
 ];
 
 const minecraftVersion: string[] = ["1.21.1", "1.21.4"];
