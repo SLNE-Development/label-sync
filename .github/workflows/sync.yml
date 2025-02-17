@@ -14,14 +14,22 @@ jobs:
                 node-version: [23.6.1]
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
-              env:
-                  GITHUB_PAT: ${{ secrets.CUSTOM_PAT }}
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
-            - run: npm install -D
-            - run: npm run build
-            - run: npm run sync
+
+            - name: Install dependencies
+              run: npm install -D
+
+            - name: Build project
+              run: npm run build
+
+            - name: Sync labels
+              env:
+                  GITHUB_PAT: ${{ secrets.CUSTOM_PAT }}
+              run: npm run sync
