@@ -1,5 +1,6 @@
 export interface Repo {
 	full_name: string;
+	private: boolean;
 }
 
 const api = "https://api.github.com/orgs/SLNE-Development/repos";

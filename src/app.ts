@@ -9,7 +9,6 @@ const token = process.env.GITHUB_PAT ?? "";
 
 const main = async () => {
 	const repos = await fetchRepoList(token);
-	console.log(`Found ${repos.length} repos`, repos);
 
 	repos.forEach((repo) => {
 		sync({
@@ -20,7 +19,9 @@ const main = async () => {
 			labels: labels,
 		})
 			.then((_diff: AnyDiff) => {
-				console.log(`Repo: ${repo.full_name} done!`);
+				const repoName = repo.private ? "Private" : repo.full_name;
+
+				console.log(`Repo: ${repoName} done!`);
 			})
 			.catch((error: any) => {
 				console.error(error);
