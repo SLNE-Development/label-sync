@@ -18,7 +18,7 @@ jobs:
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               env:
-                  GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+                  GITHUB_PAT: ${{ secrets.CUSTOM_PAT }}
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
