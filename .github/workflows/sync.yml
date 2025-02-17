@@ -23,4 +23,5 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
             - run: npm install -D
+            - run: npm run build
             - run: npm run sync

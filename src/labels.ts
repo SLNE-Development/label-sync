@@ -1,12 +1,6 @@
-import { AnyDiff } from "diff";
-import dotenv from "dotenv";
-import { Label } from "label";
-import { fetchRepoList } from "./repos";
+import { Label } from "./label";
 
-dotenv.config();
-var sync = require("github-label-sync");
-
-const labels: Label[] = [
+const rawLabels: Label[] = [
 	{ name: "dependencies", color: "1F95F1", description: "dependency" },
 	{
 		name: "for: future",
@@ -177,36 +171,12 @@ const minecraftVersionLabels = minecraftVersion.map((version) => {
 	};
 });
 
-labels.push(...minecraftVersionLabels);
+rawLabels.push(...minecraftVersionLabels);
 
-const preparedLabels = labels.map((label) => {
+export const labels = rawLabels.map((label) => {
 	return {
 		name: label.name,
 		color: label.color,
 		description: label.description.substring(0, 100),
 	};
 });
-
-const token = process.env.GITHUB_PAT ?? "";
-
-const main = async () => {
-	const repos = await fetchRepoList(token);
-
-	repos.forEach((repo) => {
-		sync({
-			allowAddedLabels: false,
-			dryRun: false,
-			accessToken: token,
-			repo: repo.full_name,
-			labels: preparedLabels,
-		})
-			.then((_diff: AnyDiff) => {
-				console.log(`Repo: ${repo.full_name} done!`);
-			})
-			.catch((error: any) => {
-				console.error(error);
-			});
-	});
-};
-
-main();
