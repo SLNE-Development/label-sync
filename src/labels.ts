@@ -19,23 +19,6 @@ const rawLabels: Label[] = [
 		color: "07946D",
 		description: "Community assistance requested, PRs welcome.",
 	},
-	{ name: "priority: high", color: "D93F0B", description: "High Priority" },
-	{
-		name: "priority: highest",
-		color: "B60205",
-		description: "Highest Priority",
-	},
-	{ name: "priority: low", color: "0E8A16", description: "Low Priority" },
-	{
-		name: "priority: lowest",
-		color: "C2E0C6",
-		description: "Lowest Priority",
-	},
-	{
-		name: "priority: medium",
-		color: "FBCA04",
-		description: "Medium Priority",
-	},
 	{
 		name: "resolution: awaiting response",
 		color: "d1d1d1",
@@ -80,13 +63,6 @@ const rawLabels: Label[] = [
 		color: "d1d1d1",
 		description: "Working as it should / expected to",
 	},
-	{ name: "scope: api", color: "5319E7", description: "" },
-	{ name: "scope: performance", color: "5319E7", description: "" },
-	{ name: "scope: server", color: "5319E7", description: "" },
-	{ name: "scope: web", color: "5319E7", description: "" },
-	{ name: "size: large", color: "C5DEF5", description: "" },
-	{ name: "size: medium", color: "C5DEF5", description: "" },
-	{ name: "size: small", color: "C5DEF5", description: "" },
 	{
 		name: "status: accepted",
 		color: "FEF2C0",
