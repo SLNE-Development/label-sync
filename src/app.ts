@@ -19,9 +19,9 @@ const main = async () => {
 			labels: labels,
 		})
 			.then((_diff: AnyDiff) => {
-				const repoName = repo.private ? "Private" : repo.full_name;
+				// const repoName = repo.private ? "Private" : repo.full_name;
 
-				console.log(`Repo: ${repoName} done!`);
+				console.log(`Repo: ${repo.full_name} done!`);
 			})
 			.catch((error: any) => {
 				console.error(error);
