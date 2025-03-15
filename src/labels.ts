@@ -1,12 +1,21 @@
 import { Label } from "./label";
 
 const rawLabels: Label[] = [
-	{ name: "dependencies", color: "1F95F1", description: "dependency" },
+	{
+		name: "dependencies",
+		color: "1F95F1",
+		description: "Pull requests that update a dependency file"
+	},
 	{
 		name: "for: future",
 		color: "133F32",
 		description:
 			"Issue scheduled for resolution at some point in the future.",
+	},
+	{
+		name: "github_actions",
+		color: "#000000",
+		description: "Pull requests that update GitHub Actions code"
 	},
 	{
 		name: "good first issue",
@@ -100,6 +109,21 @@ const rawLabels: Label[] = [
 		color: "FEF2C0",
 		description: "Issue is unlikely to be resolved.",
 	},
+	{
+		name: "scope: api",
+		color: "#E5BDE6",
+		description: "API scope"
+	},
+	{
+		name: "scope: configuration",
+		color: "#E5BDE6",
+		description: "Configuration scope"
+	},
+	{
+		name: "type: Fix",
+		color: "#B60205",
+		description: "PR that fixes an issue"
+	}
 ];
 
 const minecraftVersion: string[] = ["1.21.1", "1.21.4"];
