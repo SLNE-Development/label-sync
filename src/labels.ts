@@ -14,7 +14,7 @@ const rawLabels: Label[] = [
 	},
 	{
 		name: "github_actions",
-		color: "#000000",
+		color: "000000",
 		description: "Pull requests that update GitHub Actions code"
 	},
 	{
@@ -111,17 +111,17 @@ const rawLabels: Label[] = [
 	},
 	{
 		name: "scope: api",
-		color: "#E5BDE6",
+		color: "E5BDE6",
 		description: "API scope"
 	},
 	{
 		name: "scope: configuration",
-		color: "#E5BDE6",
+		color: "E5BDE6",
 		description: "Configuration scope"
 	},
 	{
 		name: "type: Fix",
-		color: "#B60205",
+		color: "B60205",
 		description: "PR that fixes an issue"
 	}
 ];
