@@ -19,7 +19,7 @@ const rawLabels: Label[] = [
 	},
 	{
 		name: "good first issue",
-		color: "E170F4",
+		color: "43AE92",
 		description:
 			"Simple bug fix or feature which would be a good first PR for someone new to the project",
 	},
@@ -73,6 +73,21 @@ const rawLabels: Label[] = [
 		description: "Working as it should / expected to",
 	},
 	{
+		name: "scope: api",
+		color: "D042C0",
+		description: "",
+	},
+	{
+		name: "scope: performance",
+		color: "D042C0",
+		description: "",
+	},
+		{
+		name: "scope: configuration",
+		color: "D042C0",
+		description: "Configuration scope"
+	},
+	{
 		name: "status: accepted",
 		color: "FEF2C0",
 		description:
@@ -108,16 +123,6 @@ const rawLabels: Label[] = [
 		name: "status: unlikeley",
 		color: "FEF2C0",
 		description: "Issue is unlikely to be resolved.",
-	},
-	{
-		name: "scope: api",
-		color: "E5BDE6",
-		description: "API scope"
-	},
-	{
-		name: "scope: configuration",
-		color: "E5BDE6",
-		description: "Configuration scope"
 	},
 	{
 		name: "type: Fix",
