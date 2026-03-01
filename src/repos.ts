@@ -42,12 +42,29 @@ async function fetchRepositories(
 	token: string,
 	type: "public" | "private"
 ): Promise<Repo[]> {
-	return fetch(`${api}?type=${type}`, {
-		headers: {
-			Authorization: `Bearer ${token}`,
-			"Content-Type": "application/vnd.github.v3+json",
-			Accept: "application/vnd.github.v3+json",
-			"User-Agent": "SLNE-Development",
-		},
-	}).then(async (response) => convertResponse(await response.json()));
+	const allRepos: Repo[] = [];
+	let page = 1;
+
+	while (true) {
+		const response = await fetch(`${api}?type=${type}&per_page=100&page=${page}`, {
+			headers: {
+				Authorization: `Bearer ${token}`,
+				"Content-Type": "application/vnd.github.v3+json",
+				Accept: "application/vnd.github.v3+json",
+				"User-Agent": "SLNE-Development",
+			},
+		});
+
+		const data = await response.json();
+		const repos = convertResponse(data);
+
+		if (repos.length === 0) break;
+
+		allRepos.push(...repos);
+
+		if (repos.length < 100) break;
+		page++;
+	}
+
+	return allRepos;
 }
